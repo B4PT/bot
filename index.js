@@ -198,9 +198,9 @@ function handlePostback(sender_psid, received_postback) {
 	// Get the payload for the postback
 	let payload = received_postback.payload;
 
-	if (payload === 'retour') {
+	if (payload === 'news') {
 		response = {
-			"text": "Une autre question ?\u000A\u23E9 Rappelle-moi juste qui tu es ⁉️",
+			"text": "Bonjour Louis et Baptiste",
 			"quick_replies": [{
 					"content_type": "text",
 					"title": "Un chef éclaireur 👨",
