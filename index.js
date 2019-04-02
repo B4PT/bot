@@ -78,7 +78,7 @@ const express = require('express')
 function handleQuickReply(sender_psid, received_message) {
 	let response;
 
-	if (received_message.payload === 'éclaireur') {
+	if (received_message.payload === 'new.forme') {
 		response = {
 			"text": "Enchanté ! Je suis ravi de parler avec toi, comment puis-je t’aider ? 🤖",
 			"quick_replies": [{
@@ -99,7 +99,7 @@ function handleQuickReply(sender_psid, received_message) {
 		callSendAPI(sender_psid, response);
 	}
 
-	if (received_message.payload === 'CEP') {
+	if (received_message.payload === 'new.fatigue') {
 		response = {
 			"text": "Maîtrise formée, Maîtrise au taquet ! 💪"
 		}
@@ -122,7 +122,7 @@ function handleQuickReply(sender_psid, received_message) {
 		}
 	}
 
-	if (received_message.payload === 'feu') {
+	if (received_message.payload === 'new.ennui') {
 		response = {
 			"text": "Allumez le feu ! Allumez le feu ! 🎤",
 			"quick_replies": [{
@@ -161,19 +161,23 @@ function handleQuickReply(sender_psid, received_message) {
 function handleMessage(sender_psid, received_message) {
 	if (received_message.text == "Démarrer") {
 		let response = {
-			"text": "Bonjour l'ami 😀\u000AQuoi de beau aujourd'hui?",
+			"text": "Bonjour !\u000AJe suis LE chat bot de l'internet 😈 \u000A\u000A\u23E9 Avant de commencer, peux tu me dire qui tu es ? 🤔",
 			"quick_replies": [{
 					"content_type": "text",
-					"title": "La forme 😎",
-					"payload": "new.forme"
+					"title": "👶",
+					"payload": "get_started.bebe"
 				}, {
 					"content_type": "text",
-					"title": "Fatigué .. 😴",
-					"payload": "new.fatigue"
+					"title": "👩",
+					"payload": "get_started.femme"
 				}, {
 					"content_type": "text",
-					"title": "Je m'ennuie 😐",
-					"payload": "new.ennui"
+					"title": "👨",
+					"payload": "get_started.homme"
+				}, {
+					"content_type": "text",
+					"title": "🤖",
+					"payload": "get_started.robot"
 				}
 			]
 		}
