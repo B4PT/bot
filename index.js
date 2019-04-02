@@ -196,6 +196,7 @@ function handlePostback(sender_psid, received_postback) {
 	let response;
 
 	// Get the payload for the postback
+	// c'est 20 caractères max dans le title des text BAPT
 	let payload = received_postback.payload;
 
 	if (payload === 'new') {
@@ -203,16 +204,16 @@ function handlePostback(sender_psid, received_postback) {
 			"text": "Bonjour l'ami 😀\u000AQuoi de beau aujourd'hui?",
 			"quick_replies": [{
 					"content_type": "text",
-					"title": "La forme franchement 😎",
-					"payload": "forme"
+					"title": "La forme 😎",
+					"payload": "new.forme"
 				}, {
 					"content_type": "text",
-					"title": "Je suis fatigué mon petit 😴",
-					"payload": "fatigue"
+					"title": "Fatigué .. 😴",
+					"payload": "new.fatigue"
 				}, {
 					"content_type": "text",
-					"title": "Je m'ennuie en fait 😐",
-					"payload": "ennui"
+					"title": "Je m'ennuie 😐",
+					"payload": "new.ennui"
 				}
 			]
 		}
@@ -238,19 +239,87 @@ function handlePostback(sender_psid, received_postback) {
 			"quick_replies": [{
 					"content_type": "text",
 					"title": "👶",
-					"payload": "bebe"
+					"payload": "get_started.bebe"
 				}, {
 					"content_type": "text",
 					"title": "👩",
-					"payload": "femme"
+					"payload": "get_started.femme"
 				}, {
 					"content_type": "text",
 					"title": "👨",
-					"payload": "homme"
+					"payload": "get_started.homme"
 				}, {
 					"content_type": "text",
 					"title": "🤖",
-					"payload": "robot"
+					"payload": "get_started.robot"
+				}
+			]
+		}
+		callSendAPI(sender_psid, response);
+	}
+
+	if (payload === 'get_started.bebe') {
+		response = {
+			"text": "Coucou baby 👶\u000AOn joue à un jeu ? 🤪",
+			"quick_replies": [{
+					"content_type": "text",
+					"title": "Chaud 👍",
+					"payload": "bebe.chaud"
+				}, {
+					"content_type": "text",
+					"title": "Pas chaud 🧐",
+					"payload": "bebe.paschaud"
+				}
+			]
+		}
+		callSendAPI(sender_psid, response);
+	}
+
+	if (payload === 'get_started.femme') {
+		response = {
+			"text": "Salut toi 👩\u000A Parlons sport un peu 🏃‍♀️",
+			"quick_replies": [{
+					"content_type": "text",
+					"title": "Chaud 👍",
+					"payload": "femme.chaud"
+				}, {
+					"content_type": "text",
+					"title": "Non merci 💁‍♀️",
+					"payload": "femme.paschaud"
+				}
+			]
+		}
+		callSendAPI(sender_psid, response);
+	}
+
+	if (payload === 'get_started.homme') {
+		response = {
+			"text": "Yo mec 👨\u000A Et si on écrivait un rap ensemble ? 🎤",
+			"quick_replies": [{
+					"content_type": "text",
+					"title": "Chaud 👍",
+					"payload": "homme.chaud"
+				}, {
+					"content_type": "text",
+					"title": "C'est mort 😑",
+					"payload": "homme.paschaud"
+				}
+			]
+		}
+		callSendAPI(sender_psid, response);
+	}
+
+	if (payload === 'homme.chaud') {
+		response = {
+			"text": "Let's go\u000A On est pas tout seul,",
+			"quick_replies": [{
+					"content_type": "text",
+					"title": "Le crew est la 👊",
+					"payload": "chaud.crew"
+				}, {
+					"content_type": "text",
+					"title": "Mamie est la 👵🏻",
+					"payload": "chaud.mamie"
 				}
 			]
 		}
