@@ -198,7 +198,7 @@ function handlePostback(sender_psid, received_postback) {
 	// Get the payload for the postback
 	let payload = received_postback.payload;
 
-	if (payload === 'news') {
+	if (payload === 'new') {
 		response = {
 			"text": "Bonjour Louis et Baptiste",
 			"quick_replies": [{
