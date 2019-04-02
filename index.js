@@ -240,19 +240,23 @@ function handlePostback(sender_psid, received_postback) {
 
 	if (payload === 'GET_STARTED') {
 		let response = {
-			"text": "Bonjour !\u000AJe suis Louis 🤖 de la Branche Éclaireurs SUF, merci de me contacter !\u000A\u000A🙌🏻  Je suis là pour répondre à tes questions !\u000A\u000A\u23E9 Avant de commencer, peux-tu me dire qui tu es ⁉️",
+			"text": "Bonjour !\u000AJe suis LE chat bot de l'internet 😈 \u000A\u000A\u23E9 Avant de commencer, peux tu me dire qui tu es ? 🤔",
 			"quick_replies": [{
 					"content_type": "text",
-					"title": "Un chef éclaireur 👨",
-					"payload": "Chef"
+					"title": "👶",
+					"payload": "bebe"
 				}, {
 					"content_type": "text",
-					"title": "Un éclaireur 👦🏼",
-					"payload": "éclaireur"
+					"title": "👩",
+					"payload": "femme"
 				}, {
 					"content_type": "text",
-					"title": "Autre 😎",
-					"payload": "Autre"
+					"title": "👨",
+					"payload": "homme"
+				}, {
+					"content_type": "texte",
+					"title": "🤖",
+					"payload": "robot"
 				}
 			]
 		}
