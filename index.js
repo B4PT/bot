@@ -200,38 +200,32 @@ function handlePostback(sender_psid, received_postback) {
 
 	if (payload === 'new') {
 		response = {
-			"text": "Bonjour Louis et Baptiste",
+			"text": "Bonjour l'ami 😀\u000AQuoi de beau aujourd'hui?",
 			"quick_replies": [{
 					"content_type": "text",
-					"title": "Un chef éclaireur 👨",
-					"payload": "Chef"
+					"title": "La forme franchement 😎",
+					"payload": "forme"
 				}, {
 					"content_type": "text",
-					"title": "Un éclaireur 👦🏼",
-					"payload": "éclaireur"
+					"title": "Je suis fatigué mon petit 😴",
+					"payload": "fatigue"
 				}, {
 					"content_type": "text",
-					"title": "Autre 😎",
-					"payload": "Autre"
+					"title": "Je m'ennuie en fait 😐",
+					"payload": "ennui"
 				}
 			]
 		}
 		callSendAPI(sender_psid, response);
 	}
 
-	if (payload === 'message du moment') {
+	if (payload === 'contact') {
 		response = {
-			"attachment": {
-				"type": "image",
-				"payload": {
-					"url": "https://sufbot.github.io/mybot/photodumois.png",
-					"is_reusable": true
-				}
-			},
+			"text": " On s'appele ? 📞",
 			"quick_replies": [{
 					"content_type": "text",
-					"title": "Retour au menu 🔙",
-					"payload": "Autre question"
+					"title": "OK.",
+					"payload": "contact.ok"
 				}
 			]
 		}
