@@ -80,73 +80,21 @@ function handleQuickReply(sender_psid, received_message) {
 
 	if (received_message.payload === 'new.forme') {
 		response = {
-			"text": "Enchanté ! Je suis ravi de parler avec toi, comment puis-je t’aider ? 🤖",
-			"quick_replies": [{
-					"content_type": "text",
-					"title": "Woodcraft 📝",
-					"payload": "woodcraft"
-				}, {
-					"content_type": "text",
-					"title": "Envoie des 📸",
-					"payload": "photo scout"
-				}, {
-					"content_type": "text",
-					"title": "Écris moi 📩",
-					"payload": "ecris"
-				}
-			]
+			"text": "Genial, je te souhaite une bonne journée alors !\u000AFais pas trop d'écran, ça abîme les yeux... 👓"
 		}
 		callSendAPI(sender_psid, response);
 	}
 
 	if (received_message.payload === 'new.fatigue') {
 		response = {
-			"text": "Maîtrise formée, Maîtrise au taquet ! 💪"
+			"text": "Va te reposer alors beauté !"
 		}
 		callSendAPI(sender_psid, response);
-
-		response = {
-			"attachment": {
-				"type": "image",
-				"payload": {
-					"url": "https://sufbot.github.io/mybot/image2.png",
-					"is_reusable": true
-				}
-			},
-			"quick_replies": [{
-					"content_type": "text",
-					"title": "Retour au menu 🔙",
-					"payload": "Autre question"
-				}
-			]
-		}
 	}
 
 	if (received_message.payload === 'new.ennui') {
 		response = {
-			"text": "Allumez le feu ! Allumez le feu ! 🎤",
-			"quick_replies": [{
-					"content_type": "text",
-					"title": "Retour au menu 🔙",
-					"payload": "Autre question"
-				}
-			]
-		}
-		callSendAPI(sender_psid, response);
-		response = {
-			"attachment": {
-				"type": "file",
-				"payload": {
-					"url": "https://sufbot.github.io/mybot/Feu_Fiche_pratique.pdf",
-					"is_reusable": true
-				}
-			},
-			"quick_replies": [{
-					"content_type": "text",
-					"title": "Retour au menu 🔙",
-					"payload": "Autre question"
-				}
-			]
+			"text": "Je te propose d'aller faire un tour dehors ☀️ !"
 		}
 		callSendAPI(sender_psid, response);
 	}
