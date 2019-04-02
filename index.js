@@ -107,6 +107,8 @@ function handleQuickReply(sender_psid, received_message) {
 
 
 function handleMessage(sender_psid, received_message) {
+	let response;
+	
 	if (received_message.text == "Démarrer") {
 		let response = {
 			"text": "Bonjour !\u000AJe suis LE chat bot de l'internet 😈 \u000A\u000A\u23E9 Avant de commencer, peux tu me dire qui tu es ? 🤔",
