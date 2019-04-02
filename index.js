@@ -254,7 +254,7 @@ function handlePostback(sender_psid, received_postback) {
 					"title": "👨",
 					"payload": "homme"
 				}, {
-					"content_type": "texte",
+					"content_type": "text",
 					"title": "🤖",
 					"payload": "robot"
 				}
