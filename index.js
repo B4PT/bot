@@ -159,29 +159,21 @@ function handleQuickReply(sender_psid, received_message) {
 
 
 function handleMessage(sender_psid, received_message) {
-	if (received_message.text == "Un chef éclaireur") {
+	if (received_message.text == "Démarrer") {
 		let response = {
-			"text": "Canon ! Merci de ton engagement pour ta troupe, comment puis-je aider ? 🤖",
+			"text": "Bonjour l'ami 😀\u000AQuoi de beau aujourd'hui?",
 			"quick_replies": [{
 					"content_type": "text",
-					"title": "Mon camp scout 🏕",
-					"payload": "camp"
+					"title": "La forme 😎",
+					"payload": "new.forme"
 				}, {
 					"content_type": "text",
-					"title": "CEP - Encadrement ⁉️",
-					"payload": "CEP"
+					"title": "Fatigué .. 😴",
+					"payload": "new.fatigue"
 				}, {
 					"content_type": "text",
-					"title": "Envoie de 📸",
-					"payload": "photo chef"
-				}, {
-					"content_type": "text",
-					"title": "Nous 📞?",
-					"payload": "contact"
-				}, {
-					"content_type": "text",
-					"title": "Écris moi 📩",
-					"payload": "ecris"
+					"title": "Je m'ennuie 😐",
+					"payload": "new.ennui"
 				}
 			]
 		}
@@ -200,7 +192,7 @@ function handlePostback(sender_psid, received_postback) {
 	let payload = received_postback.payload;
 
 	if (payload === 'new') {
-		response = {
+		let response = {
 			"text": "Bonjour l'ami 😀\u000AQuoi de beau aujourd'hui?",
 			"quick_replies": [{
 					"content_type": "text",
@@ -221,7 +213,7 @@ function handlePostback(sender_psid, received_postback) {
 	}
 
 	if (payload === 'contact') {
-		response = {
+		let response = {
 			"text": " On s'appele ? 📞",
 			"quick_replies": [{
 					"content_type": "text",
@@ -259,7 +251,7 @@ function handlePostback(sender_psid, received_postback) {
 	}
 
 	if (payload === 'get_started.bebe') {
-		response = {
+		let response = {
 			"text": "Coucou baby 👶\u000AOn joue à un jeu ? 🤪",
 			"quick_replies": [{
 					"content_type": "text",
@@ -276,7 +268,7 @@ function handlePostback(sender_psid, received_postback) {
 	}
 
 	if (payload === 'get_started.femme') {
-		response = {
+		let response = {
 			"text": "Salut toi 👩\u000A Parlons sport un peu 🏃‍♀️",
 			"quick_replies": [{
 					"content_type": "text",
@@ -293,7 +285,7 @@ function handlePostback(sender_psid, received_postback) {
 	}
 
 	if (payload === 'get_started.homme') {
-		response = {
+		let response = {
 			"text": "Yo mec 👨\u000A Et si on écrivait un rap ensemble ? 🎤",
 			"quick_replies": [{
 					"content_type": "text",
@@ -310,7 +302,7 @@ function handlePostback(sender_psid, received_postback) {
 	}
 
 	if (payload === 'homme.chaud') {
-		response = {
+		let response = {
 			"text": "Let's go\u000A On est pas tout seul,",
 			"quick_replies": [{
 					"content_type": "text",
